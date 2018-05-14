@@ -35,4 +35,19 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Medcien');
     }
+
+    public function clinique()
+    {
+        return $this->hasOne('App\Clinique');
+    }
+
+    public function laboratoire()
+    {
+        return $this->hasOne('App\Laboratoire');
+    }
+    
+    public function administrateur()
+    {
+        return $this->hasOne('App\Administrateur');
+    }
 }

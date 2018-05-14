@@ -24,7 +24,7 @@
                     <tr>
                         <th>Cin</th>
                         <th>Nom</th>
-                        <th>Prenom</th>
+                        <th>Prénom</th>
                         <th>Spécialité</th>
                         <th>Tel</th>
                         <th>Action</th>

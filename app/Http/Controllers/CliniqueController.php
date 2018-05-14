@@ -11,6 +11,27 @@ use App\User ;
 
 class CliniqueController extends Controller
 {
+
+    public function __construct(){
+
+        $this->middleware('auth');
+        $this->middleware('clinique');
+
+        /*$this->middleware(function ($request, $next) {
+            $this->user= Auth::user();
+            $this->user->role
+            return $next($request);
+        });*/
+
+       // $this->middleware('log')->only('index');
+
+       // $this->middleware('subscribed')->except('store');
+       /* $this->middleware(function ($request, $next) {
+            $this->user= Auth::user();
+    
+            return $next($request);
+        });*/
+    }
     /**
      * Display a listing of the resource.
      *

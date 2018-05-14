@@ -3,11 +3,10 @@
 @section('content')
 
 <div class="row">
-   
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>Ajouter un medcien</h5>
+                <h5>Ajouter un patient</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -27,9 +26,9 @@
                 </div>
             </div>
             <div class="ibox-content">
-                <form method="post" class="form-horizontal " action="{{url('medciens')}}">
+                <form method="post" class="form-horizontal " action="{{url('patients')}}">
                     {{ csrf_field() }}
-                    <div class="form-group"><label class="col-sm-2 control-label">Nom</label>
+                    <div class="form-group @if ($errors->first('nom')) has-error  @endif "><label class="col-sm-2 control-label">Nom</label>
 
                         <div class="col-sm-10"><input type="text" class="form-control" name="nom" value="{{ old('nom') }}">
                             @if ($errors->has('nom'))
@@ -40,7 +39,7 @@
                         </div>
                     </div>
                     <div class="hr-line-dashed"></div>
-                    <div class="form-group"><label class="col-sm-2 control-label">Prénom</label>
+                    <div class="form-group  @if ($errors->first('prenom')) has-error  @endif " ><label class="col-sm-2 control-label">Prénom</label>
                         <div class="col-sm-10"><input type="text" class="form-control" name="prenom" value="{{ old('prenom') }}"> 
                              @if ($errors->has('prenom'))
                                     <span class="help-block">
@@ -50,7 +49,7 @@
                         </div>
                     </div>
                     <div class="hr-line-dashed"></div>
-                      <div class="form-group"><label class="col-sm-2 control-label">Email</label>
+                      <div class="form-group  @if ($errors->first('email')) has-error  @endif "><label class="col-sm-2 control-label">Email</label>
                         <div class="col-sm-10"><input type="email" class="form-control" name="email" value="{{ old('email') }}"> 
                              @if ($errors->has('email'))
                                     <span class="help-block">
@@ -59,18 +58,9 @@
                                 @endif
                         </div>
                     </div>
+                    
                     <div class="hr-line-dashed"></div>
-                    <div class="form-group"><label class="col-sm-2 control-label">Specialite</label>
-                        <div class="col-sm-10"><input type="text" class="form-control" name="specialite" value="{{ old('specialite') }}"> 
-                             @if ($errors->has('specialite'))
-                                    <span class="help-block">
-                                        <strong class="text-danger">{{ $errors->first('specialite') }}</strong>
-                                    </span>
-                                @endif
-                        </div>
-                    </div>
-                    <div class="hr-line-dashed"></div>
-                    <div class="form-group"><label class="col-sm-2 control-label">Cin</label>
+                    <div class="form-group  @if ($errors->first('cin')) has-error  @endif "><label class="col-sm-2 control-label">Cin</label>
                         <div class="col-sm-10"><input type="text" class="form-control" name="cin" value="{{ old('cin') }}">
                          @if ($errors->has('cin'))
                                     <span class="help-block">
@@ -79,8 +69,8 @@
                                 @endif 
                         </div>
                     </div>
-                    <div class="hr-line-dashed"></div>
-                    <div class="form-group"><label class="col-sm-2 control-label">tel</label>
+                  <div class="hr-line-dashed"></div>
+                    <div class="form-group  @if ($errors->first('tel')) has-error  @endif "><label class="col-sm-2 control-label">Tel</label>
                         <div class="col-sm-10"><input type="number" class="form-control" name="tel" value="{{ old('tel') }}"> 
                              @if ($errors->has('tel'))
                                     <span class="help-block">
@@ -90,33 +80,16 @@
                         </div>
                     </div>
                     <div class="hr-line-dashed"></div>
-                    <div class="form-group"><label class="col-sm-2 control-label">Login</label>
-                        <div class="col-sm-10"><input type="text" class="form-control" name="login" value="{{ old('login') }}"> 
-                             @if ($errors->has('login'))
-                                    <span class="help-block">
-                                        <strong class="text-danger">{{ $errors->first('login') }}</strong>
-                                    </span>
-                                @endif
+                    <div class="form-group  @if ($errors->first('age')) has-error  @endif "><label class="col-sm-2 control-label">Age</label>
+                        <div class="col-sm-10"><input type="number" class="form-control" name="age" value="{{ old('age') }}"> 
+                            @if ($errors->has('age'))
+                            <span class="help-block">
+                                <strong class="text-danger">{{ $errors->first('age') }}</strong>
+                            </span>
+                        @endif
                         </div>
                     </div>
                     <div class="hr-line-dashed"></div>
-                    <div class="form-group"><label class="col-sm-2 control-label">Mot de passe</label>
-                        <div class="col-sm-10"><input type="password" class="form-control" name="password"> 
-                             @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong class="text-danger">{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                        </div>
-                    </div>
-                    <div class="hr-line-dashed"></div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label"> confirm Mot de passe</label>
-                            <div class="col-md-10">
-                                <input  placeholder="password-confirm"  type="password" class="form-control" name="password_confirmation" >
-                            </div>
-                    </div>
-
                     <div class="form-group">
                         <div class="col-sm-4 col-sm-offset-2">
                             <button class="btn btn-primary" type="submit">Enregistrer</button>
@@ -145,7 +118,7 @@
                         showMethod: 'slideDown',
                         timeOut: 6000
                     };
-                    toastr.success( 'le Medcien a étè bien enrgistre !!','Creation'  );
+                    toastr.success( 'le Patient a étè bien enrgistre !!','Creation'  );
 
                 }, 1000);
 

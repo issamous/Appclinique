@@ -17,12 +17,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('patients','PacientController@index');
-Route::get('patients/create','PacientController@create');
-Route::post('patients','PacientController@store');
-Route::get('patients/{id}/edit','PacientController@edit');
-Route::put('patients/{id}','PacientController@update');
-Route::delete('patients/{id}','PacientController@destroy');
+Route::get('patients','PatientController@index');
+Route::get('patients/create','PatientController@create');
+Route::post('patients','PatientController@store');
+Route::get('patients/{id}/edit','PatientController@edit');
+Route::put('patients/{id}','PatientController@update');
+Route::delete('patients/{id}','PatientController@destroy');
 
 Route::put('medciens/{id}/password','MedcienController@userupdate');
 Route::get('medciens','MedcienController@index');

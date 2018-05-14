@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <div class="hr-line-dashed"></div>
-                    <div class="form-group"><label class="col-sm-2 control-label">Prenom</label>
+                    <div class="form-group"><label class="col-sm-2 control-label">Prénom</label>
                         <div class="col-sm-10"><input type="text" class="form-control" name="prenom" value="{{ $medcien->prenom }}"> 
                              @if ($errors->has('prenom'))
                                     <span class="help-block">

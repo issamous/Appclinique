@@ -27,7 +27,7 @@
             </li>
 
             <li class="{{ request()->route()->uri=='administrateurs' || request()->route()->uri=='administrateurs/create'  || request()->route()->uri=='administrateurs/{id}/edit' ?'active':''}}">
-                <a href="#"><i class="fa fa-hospital-o"></i> <span class="nav-label">Administrateurs</span> <span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-user"></i> <span class="nav-label">Administrateurs</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
                     <li ><a href="{{ url('administrateurs') }}"  style="{{ request()->route()->uri=='administrateurs'?'color: #ffffff !important;':''}}">Liste des Admin</a></li>
                     <li><a style="{{ request()->route()->uri=='administrateurs/create'?'color: #ffffff !important;':''}}" href="{{ url('administrateurs/create') }}">Ajouter un Admin</a></li>

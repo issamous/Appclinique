@@ -10,7 +10,25 @@
         </div>
         <ul class="nav navbar-top-links navbar-right">
             <li>
-                <span class="m-r-sm text-muted welcome-message">Bienvenu {name} dans l'escpace d'administartion.</span>
+                  
+                <span class="m-r-sm text-muted welcome-message">Bienvenu     
+                    @switch(auth()->user()->role)
+                        @case(0)
+                            <span class="h4"> {{ auth()->user()->administrateur()->first()->nom }}</span>
+                            @break
+                    
+                        @case(1)
+                            <span class="h4">  {{ auth()->user()->clinique()->first()->nom }}</span>
+                            @break
+                      
+                        @case(2)
+                            <span class="h4">  {{ auth()->user()->laboratoire()->first()->nom }}</span>
+                             @break
+                        @case(3)
+                            <span class="h4">  {{ auth()->user()->medcien()->first()->nom }}</span>
+                              @break      
+                     
+                    @endswitch  dans l'escpace d'administartion.</span>
             </li>
             <li class="dropdown">
                 <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
@@ -110,9 +128,17 @@
 
 
             <li>
-                <a href="login.html">
-                    <i class="fa fa-sign-out"></i> Log out
-                </a>
+                
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                  
             </li>
         </ul>
 
