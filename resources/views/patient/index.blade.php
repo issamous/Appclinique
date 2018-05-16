@@ -8,7 +8,7 @@
                     <div class="ibox-title">
                         <h5>Tables des Patients</h5>
                         <div class="ibox-tools">
-                           <a href="" class="btn btn-primary" role="button" > Ajouter</a>
+                            <a href="{{ url('patients/create') }}" class="btn btn-primary" role="button" >Ajouter</a>
 
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>

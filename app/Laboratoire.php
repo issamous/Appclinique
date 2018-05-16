@@ -18,4 +18,10 @@ class Laboratoire extends Model
    {
        return $this->belongsTo('App\User');
    }
+
+   public function dossiers()
+    {
+        return $this->hasMany('App\Dossier');
+    } 
+
 }

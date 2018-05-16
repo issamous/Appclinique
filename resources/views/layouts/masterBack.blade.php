@@ -53,7 +53,7 @@
     <script src="{{ asset('assets/js/plugins/pace/pace.min.js') }}"></script>
    
 
-    @yield('jsSup')
+ @yield('jsSup')
 
 </body>
 </html>

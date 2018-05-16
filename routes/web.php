@@ -57,6 +57,14 @@ Route::put('administrateurs/{id}','AdministrateurController@update');
 Route::delete('administrateurs/{id}','AdministrateurController@destroy');
 
 
+Route::get('dossiers','DossierController@index');
+Route::get('dossiers/create','DossierController@create');
+Route::post('dossiers','DossierController@store');
+Route::get('dossiers/{id}/edit','DossierController@edit');
+Route::put('dossiers/{id}','DossierController@update');
+Route::delete('dossiers/{id}','DossierController@destroy');
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/dashbord', 'DashbordController@index');

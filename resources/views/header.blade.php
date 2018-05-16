@@ -24,9 +24,7 @@
                         @case(2)
                             <span class="h4">  {{ auth()->user()->laboratoire()->first()->nom }}</span>
                              @break
-                        @case(3)
-                            <span class="h4">  {{ auth()->user()->medcien()->first()->nom }}</span>
-                              @break      
+                     
                      
                     @endswitch  dans l'escpace d'administartion.</span>
             </li>

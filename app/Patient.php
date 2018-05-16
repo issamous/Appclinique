@@ -9,4 +9,10 @@ class Patient extends Model
 {  
     use SoftDeletes;
     protected $dates = ['deleted_at'];
+    
+    public function dossiers()
+    {
+        return $this->hasMany('App\Dossier');
+    }
+
 }
